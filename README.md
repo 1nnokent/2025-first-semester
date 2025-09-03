@@ -1,2 +1,5 @@
-"# Как пользоваться Git" 
-'- [Как просмотреть историю](./log_help.md)' 
+America ya
+halo
+halo
+halo
+halo
