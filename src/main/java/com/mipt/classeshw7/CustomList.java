@@ -1,28 +1,46 @@
-package com.mipt.classeshw6;
+package com.mipt.classeshw7;
 
-public class CollectionUtils {
+/**
+ * Интерфейс, представляющий базовый список элементов типа {@code A}.
+ * Обеспечивает основные операции добавления, удаления и доступа к элементам.
+ *
+ * @param <A> тип элементов, хранящихся в списке
+ */
+public interface CustomList<A> {
 
-  public static interface CustomList<A> {
+  /**
+   * Добавляет элемент в список.
+   *
+   * @param element элемент, который необходимо добавить
+   */
+  public void add(A element);
 
-    public void add (A element) {};
+  /**
+   * Возвращает элемент из списка по указанному индексу.
+   *
+   * @param index индекс элемента в списке
+   * @return элемент по индексу
+   */
+  public A get(int index);
 
-    public A get (int index) {};
+  /**
+   * Удаляет элемент из списка по указанному индексу.
+   *
+   * @param index индекс элемента, который необходимо удалить
+   */
+  public void remove(int index);
 
-    public void remove (A element) {};
+  /**
+   * Возвращает количество элементов в списке.
+   *
+   * @return размер списка
+   */
+  public int size();
 
-    public int size () {};
-
-    public boolean isEmpty () {};
-  }
-
-  
-
-  public static void main(String[] args) {
-    final List<Integer> list1 = Arrays.asList(1, 2, 3);
-    final List<Double> list2 = Arrays.asList(4.5, 5.6);
-    final List<Number> merged = CollectionUtils.mergeLists(list1, list2);
-
-    final List<Object> destination = new ArrayList<>();
-    CollectionUtils.addAll(destination, list1);
-  }
+  /**
+   * Проверяет, пуст ли список.
+   *
+   * @return {@code true}, если список не содержит элементов, иначе {@code false}
+   */
+  public boolean isEmpty();
 }
